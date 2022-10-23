@@ -5,25 +5,39 @@
 @section('content-title', 'Chi tiết sản phẩm')
 
 @section('content')
-    <div class="row mb-2">
-        <div class="col-12">
-            <div class="card card-body">
-                <div class="image" style="text-align: center">
-                <img src="{{ BASE_URL }}App/public/images/Unnamed Files-web-1664366542217.png" width="50%" alt="" srcset="">
+    <section style="background-color: #eee;">
+        <div class="container py-2">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="card text-black">
+                        <i class="fa-solid fa-circle-info pt-3 pb-1 px-3"></i>
+                        <img src="{{ BASE_URL.$product->image_url }}" class="card-img-top" alt="Apple Computer" />
+                        <div class="card-body">
+                              <div class="d-flex justify-content-between">
+                                  <h3 class="card-title font-weight-bold">Thông tin sản phẩm</h3>
+                              </div>
+                                <div class="d-flex py-2 justify-content-between">
+                                    <span class="font-weight-bold">Tên sản phẩm</span><span>{{ $product->name }}</span>
+                                </div>
+                                <div class="d-flex py-2 justify-content-between">
+                                    <span class="font-weight-bold">Giá sản phẩm:</span><span>{{ $product->price }}</span>
+                                </div>
+                                <div class="d-flex py-2 justify-content-between">
+                                    <span class="font-weight-bold">Số lượng:</span><span>{{ $product->quantity }}</span>
+                                </div>
+                                <div class="d-flex py-2 justify-content-between">
+                                    <span class="font-weight-bold">Danh
+                                        mục:</span><span>{{ $product->category->name }}</span>
+                                </div>
+                                <div class="d-flex py-2 justify-content-between">
+                                    <span class="font-weight-bold">Trạng thái:</span><span>Còn hàng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info">
-                    <h1>Thông tin sản phẩm</h1>
-                    <ul>
-                        <li><span>Tên sản phẩm:abc</span></li>
-                        <li><span>Giá sản phẩm:1231231</span></li>
-                        <li><span>Số lượng:123</span></li>
-                        <li><span>Danh mục: Áo lót</span></li>
-                        <li><span>Trạng thái: Còn hàng</span></li>
-                    </ul>
-                </div>
-                
             </div>
-            
         </div>
-    </div>
+    </section>
 @endsection

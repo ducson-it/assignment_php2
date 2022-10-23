@@ -1,45 +1,48 @@
 @extends('adminlte.layouts.master')
 
-@section('title', 'Cập nhật sản phẩm')
+@section('title', 'Tạo đơn hàng')
 
-@section('content-title', 'Cập nhật sản phẩm')
+@section('content-title', 'Tạo đơn hàng')
 
 @section('content')
     <div class="row mb-2">
         <div class="col-12">
             <div class="card card-primary">
-                <form action="" enctype="multipart/form-data" method="POST">
+                <form action="{{ BASE_URL }}admin/them-don-hang" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputName">Khách hàng</label>
                             <select class="js-example-basic-single form-control" style="height: 50px" id="inputName"
-                                name="state">
-                                <option value="AL">Alabama (ID: 212)</option>
-                                <option value="WY">Wyoming (ID: 212)</option>
+                                name="user">
+                                @foreach ($users as $user)
+                                <option value="{{$user->id}}">{{ $user->name }} (ID: {{ $user->id }})</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="inputName">Sản phẩm</label>
                             <select class="js-example-basic-sin gle form-control" style="height: 50px" id="inputName"
-                                name="state">
-                                <option value="AL">Áo lót da báo (ID: 212)</option>
-                                <option value="WY">Quần lót da báo (ID: 213)</option>
+                                name="product">
+                                @foreach ($products as $product)
+                                <option value="{{$product->id}}">{{ $product->name }} (ID: {{ $product->id }})</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="date">Ngày mua</label>
-                            <input type="date" id="date" disabled class="form-control" name="trip-start" />
+                            <input type="date" id="date" class="form-control" name="trip-start" />
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect2">Trạng thái</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
-                                <option>Đã giao</option>
-                                <option>Chưa giao</option>
+                            <select class="form-control" id="exampleFormControlSelect2" name="status">
+                                @foreach ($status as $stt)
+                                <option value="{{$stt->id}}">{{ $stt->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
+                            <button type="submit" class="btn btn-primary">Tạo đơn hàng</button>
                         </div>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <a href="{{ BASE_URL }}" class="brand-link">
       <img src="{{ BASE_URL }}App/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Admin</span>
     </a>
 
     <div class="sidebar">
@@ -10,7 +10,7 @@
           <img src="{{ BASE_URL }}App/public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{ BASE_URL }}" class="d-block">Alexander Pierce</a>
+          <a href="{{ BASE_URL }}" class="d-block">{{ isset($_SESSION['email']) && isset($_SESSION['password']) ? $_SESSION['email'] : 'Dashboard' }}</a>
         </div>
       </div>
 
@@ -37,13 +37,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/ds-san-pham" class="nav-link">
+                <a href="{{ BASE_URL }}admin/ds-san-pham" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/them-san-pham" class="nav-link">
+                <a href="{{ BASE_URL }}admin/them-san-pham" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm sản phẩm</p>
                 </a>
@@ -60,13 +60,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/ds-danh-muc" class="nav-link">
+                <a href="{{ BASE_URL }}admin/ds-danh-muc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/them-danh-muc" class="nav-link">
+                <a href="{{ BASE_URL }}admin/them-danh-muc" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm danh mục</p>
                 </a>
@@ -83,13 +83,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/ds-khach-hang" class="nav-link">
+                <a href="{{ BASE_URL }}admin/ds-khach-hang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách khách hàng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ BASE_URL }}/admin/them-khach-hang" class="nav-link">
+                <a href="{{ BASE_URL }}admin/them-khach-hang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm khách hàng</p>
                 </a>

@@ -8,18 +8,20 @@
     <div class="row mb-2">
         <div class="col-12">
             <div class="card card-primary">
-                <form action="" method="POST">
+                <form action="{{ BASE_URL }}admin/cap-nhat-danh-muc/{{ $category->id }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputName">Tên danh mục</label>
                             <input name="name" type="text" class="form-control" id="inputName"
-                                placeholder="Tên danh mục" value="Quần lót">
+                                placeholder="Tên danh mục" value="{{ $category->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Trạng thái</label>
                             <select class="form-control" id="exampleFormControlSelect1">
-                                <option selected>Ok luôn</option>
+                                @foreach ($status as $stt)
+                                <option value="{{ $stt->id }}" {{ $stt->id == $category->status ? 'selected' : '' }}>{{ $stt->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="card-footer">

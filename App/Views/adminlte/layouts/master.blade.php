@@ -63,7 +63,6 @@
     <script src="{{ BASE_URL }}App/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="{{ BASE_URL }}App/public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <script src="{{ BASE_URL }}App/public/dist/js/adminlte.min.js"></script>
-    <script src="{{ BASE_URL }}App/public/dist/js/demo.js"></script>
 
 
     @stack('js')

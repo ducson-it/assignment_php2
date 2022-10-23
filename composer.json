@@ -15,6 +15,8 @@
     "require": {
         "eftec/bladeonehtml": "^2.3",
         "almasaeed2010/adminlte": "~3.2",
-        "phroute/phroute": "^2.2"
+        "phroute/phroute": "^2.2",
+        "illuminate/database": "^8.83",
+        "illuminate/events": "^8.83"
     }
 }
